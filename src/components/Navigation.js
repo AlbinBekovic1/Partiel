@@ -6,11 +6,10 @@ const navigation = () => {
   return (
     <div class="header">
       <nav class="nav">
-        <NavLink to="/joke/nouvelle"> Ajout </NavLink>
-        <br />
-        <NavLink to="/joke/:id"> Modification </NavLink>
-        <br />
         <NavLink to="/"> Liste </NavLink>
+
+        <br />
+        <NavLink to="/joke/nouvelle"> Ajout </NavLink>
       </nav>
     </div>
   );
