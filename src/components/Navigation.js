@@ -7,7 +7,6 @@ const navigation = () => {
     <div class="header">
       <nav class="nav">
         <NavLink to="/"> Liste </NavLink>
-
         <br />
         <NavLink to="/joke/nouvelle"> Ajout </NavLink>
       </nav>
