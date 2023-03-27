@@ -36,13 +36,13 @@ const modification = () => {
   }
 
   return (
-    <div className="edit-joke">
+    <div className="modif-blague">
       <h1>Modifier la blague</h1>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className="formulaire">
           {joke.type === 'twopart' ? (
             <>
-              <label htmlFor="setup">Setup :</label>
+              <div className="qst">Question :</div>
               <textarea
                 id="setup"
                 name="setup"
@@ -52,7 +52,7 @@ const modification = () => {
                 rows="3"
               ></textarea>
 
-              <label htmlFor="delivery">Delivery :</label>
+              <div className="rep">Réponse :</div>
               <textarea
                 id="delivery"
                 name="delivery"
@@ -64,7 +64,7 @@ const modification = () => {
             </>
           ) : (
             <>
-              <label htmlFor="joke">Joke :</label>
+              <div className="blague">Blague :</div>
               <textarea
                 id="joke"
                 name="joke"

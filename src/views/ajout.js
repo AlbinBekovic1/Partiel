@@ -26,11 +26,11 @@ const ajout = () => {
   };
 
   return (
-    <div className="add-joke">
+    <div className="ajoutblague">
       <h1>Ajouter une blague</h1>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <div htmlFor="setup">Question :</div>
+        <div className="formulaire">
+          <div className="qst">Question :</div>
           <textarea
             id="setup"
             name="setup"
@@ -40,7 +40,7 @@ const ajout = () => {
             rows="3"
           ></textarea>
 
-          <div htmlFor="delivery">Réponse :</div>
+          <div className="rep">Réponse :</div>
           <textarea
             id="delivery"
             name="delivery"
