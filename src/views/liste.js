@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/liste.scss';
 
 const liste = () => {
@@ -37,6 +38,9 @@ const liste = () => {
           ) : (
             <p>{joke.joke}</p>
           )}
+          <Link to={`/joke/${joke.id}`} className="modif-btn">
+            Modifier
+          </Link>{' '}
         </div>
       ))}
     </div>
