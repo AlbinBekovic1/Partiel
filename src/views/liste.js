@@ -1,43 +1,45 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/liste.scss';
 import React, { useEffect, useState } from 'react';
-import React, { NavLink } from 'react-router-dom';
+import '../styles/liste.scss';
 
 const liste = () => {
-  const [users, setUsers] = useState([]);
+  const [jokes, setJokes] = useState([]);
 
   useEffect(() => {
-    if (!users.length) {
-      fetch('https://randomuser.me/api/?results=10')
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          console.log(data);
-          setUsers(data.results);
-          localStorage.setItem('liste', JSON.stringify(data.results));
-        });
-    }
-  }, [users]);
+    const fetchJokes = async () => {
+      const storedJokes = localStorage.getItem('jokes');
+      if (storedJokes) {
+        setJokes(JSON.parse(storedJokes));
+      } else {
+        const response = await fetch(
+          'https://v2.jokeapi.dev/joke/Any?lang=fr&amount=10'
+        );
+        const data = await response.json();
+        if (data && data.jokes) {
+          setJokes(data.jokes);
+          localStorage.setItem('jokes', JSON.stringify(data.jokes));
+        }
+      }
+    };
+
+    fetchJokes();
+  }, []);
 
   return (
-    <nav className="users">
+    <div className="jokes-list">
       <h1>Liste des blagues</h1>
-      <div className="grid">
-        {users.map((e) => (
-          <div className="user">
-            <img src={e.picture.thumbnail} /> <br />
-            <span>
-              {e.name.title} {e.name.first} {e.name.last}
-            </span>
-            <br />
-            <span>Nationalité : {e.nat}</span> <br />
-            <NavLink to={e.email}>{e.email}</NavLink> <br />
-          </div>
-        ))}
-      </div>
-    </nav>
+      {jokes.map((joke, index) => (
+        <div key={index} className="joke-card">
+          {joke.type === 'twopart' ? (
+            <>
+              <p>{joke.setup}</p>
+              <p>{joke.delivery}</p>
+            </>
+          ) : (
+            <p>{joke.joke}</p>
+          )}
+        </div>
+      ))}
+    </div>
   );
 };
 
