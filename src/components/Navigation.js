@@ -9,8 +9,6 @@ const navigation = () => {
         <NavLink to="/"> Liste </NavLink>
         <br />
         <NavLink to="/joke/nouvelle"> Ajout </NavLink>
-        <br />
-        <NavLink to="/joke/:id"> Modification </NavLink>
       </nav>
     </div>
   );

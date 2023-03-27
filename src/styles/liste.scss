@@ -1,17 +1,12 @@
 .blagues {
   margin: 10px;
 
-  .blague {
+  .blague  {
     display: grid;
     justify-content: center;
     grid-template-columns: 1fr 1fr;
     padding: 15px;
     gap: 10px;
-  }
-
-  .user {
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
+    background-color: lightcoral;
   }
 }
