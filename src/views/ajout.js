@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const ajout = () => {
   return (
     <div>
-      <h1>Détails des utilisateurs</h1>
-      <p>Ceci est un détail</p>
-      <Link to="/utilisateurs/editer/:user_id"> Gestion des utilisiateurs</Link>
-      <Link to="/">Liste des utilisateurs</Link>
+      <h1>Ajout des blagues</h1>
+      <p>Ceci est un ajout</p>
+      <Link to="/joke/:id"> Modification d'une blague</Link>
+      <Link to="/">Liste des blagues</Link>
     </div>
   );
 };

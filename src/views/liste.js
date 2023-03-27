@@ -23,7 +23,7 @@ const liste = () => {
 
   return (
     <nav className="users">
-      <h1>Liste des utilisateurs</h1>
+      <h1>Liste des blagues</h1>
       <div className="grid">
         {users.map((e) => (
           <div className="user">
