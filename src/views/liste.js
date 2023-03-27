@@ -25,10 +25,10 @@ const liste = () => {
   }, []);
 
   return (
-    <div className="blague">
+    <div className="blagues">
       <h1>Liste des blagues</h1>
       {jokes.map((joke, index) => (
-        <div key={index} className="joke-card">
+        <div key={index} className="blague">
           {joke.type === 'twopart' ? (
             <>
               <p>{joke.setup}</p>
