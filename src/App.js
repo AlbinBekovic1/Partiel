@@ -11,9 +11,9 @@ export default function App() {
     <div>
       <Navigation />
       <Routes>
-        <Route path="/utilisateur/editer/:user_id" element={<Ajout />} />
+        <Route path="/joke/nouvelle" element={<Ajout />} />
         <Route path="/" element={<Liste />} />
-        <Route path="/utilisateurs/:user_id" element={<Modification />} />
+        <Route path="/joke/:id" element={<Modification />} />
       </Routes>
     </div>
   );
