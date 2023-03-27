@@ -25,7 +25,7 @@ const liste = () => {
   }, []);
 
   return (
-    <div className="jokes-list">
+    <div className="blague">
       <h1>Liste des blagues</h1>
       {jokes.map((joke, index) => (
         <div key={index} className="joke-card">
